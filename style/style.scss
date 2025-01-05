@@ -4,6 +4,14 @@ $blue-font: #39a1ca;
 $light-blue: #90e0ef;
 $very_light_blue: #e2f1f4;
 
+@mixin query($width) {
+  @if ($width==700) {
+    @media (max-width: 700px) {
+      @content;
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -18,6 +26,9 @@ body {
   width: min(1200px, 100vw);
   margin: auto;
   padding: 0 30px;
+  @include query(700) {
+    padding: 5px;
+  }
 }
 
 .shadow {
@@ -41,6 +52,9 @@ body {
   left: 30px;
   color: #ffffff;
   font-weight: 500;
+  @include query(700) {
+    font-size: 18px;
+  }
   a {
     text-decoration: none;
     color: #ffffff;
@@ -66,6 +80,10 @@ body {
   &:hover {
     cursor: pointer;
   }
+  @include query(700) {
+    width: 16px;
+    margin-right: 10px;
+  }
 }
 .location__input {
   width: 260px;
@@ -73,15 +91,29 @@ body {
   padding: 10px;
   border-radius: 10px 0 0 10px;
   margin-right: 0;
+  @include query(700) {
+    width: 60%;
+    border-radius: 5px 0 0 5px;
+    padding: 5px;
+    font-size: 12px;
+  }
 }
 .location__button {
   border-radius: 0 10px 10px 0;
   margin-left: 0;
+  @include query(700) {
+    border-radius: 0 5px 5px 0;
+    padding: 5px;
+    font-size: 12px;
+  }
 }
 .unit {
   margin-left: 10px;
   padding: 10px 13px;
   border-radius: 20px;
+  @include query(700) {
+    font-size: 12px;
+  }
 }
 button {
   border: none;
@@ -101,11 +133,18 @@ button {
   border-radius: 15px;
   position: absolute;
   top: 200px;
+  @include query(700) {
+    width: 100%;
+    margin: 0 10px;
+  }
 }
 .city {
   font-size: 1.7em;
   color: $blue;
   margin-bottom: 5px;
+  @include query(700) {
+    font-size: 1.4em;
+  }
 }
 
 .todayscard-firstrow {
@@ -140,6 +179,10 @@ button {
 .cards {
   display: flex;
   justify-content: space-between;
+  @include query(700) {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 .cards__card {
   background: #ffffff;
@@ -147,22 +190,37 @@ button {
   padding: 15px;
   margin: 0 10px;
   text-align: center;
+  @include query(700) {
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 
 .card__icon {
   width: 70px;
   margin-bottom: 10px;
+  @include query(700) {
+    margin: 0;
+  }
 }
 .card__day {
   font-size: 13px;
   color: $blue;
   font-weight: 700;
   margin-bottom: 20px;
+  @include query(700) {
+    margin: 0;
+  }
 }
 .card__temprature {
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 10px;
+  @include query(700) {
+    margin: 0;
+  }
 }
 .card__weather {
   font-size: 13px;
