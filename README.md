@@ -16,8 +16,8 @@ Developed a responsive web application that allows users to search for and view 
 - Responsive layout adapting to various screen sizes
 
 ### 4. **Challenges and Solutions**
-> **Challenge:** Handling asynchronous API calls and managing loading states.  
-> **Solution:** Implemented loading indicators and error handling to enhance user experience during data retrieval.
+**Challenge:** Handling asynchronous API calls and managing loading states.  
+**Solution:** Implemented loading indicators and error handling to enhance user experience during data retrieval.
 
 ### 5. **Link to Live Project and Source Code**
 - **Live Application:** [Weather Forecast App](https://hamedsamavati.github.io/weather-forecast/)
