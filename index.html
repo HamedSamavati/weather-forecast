@@ -31,41 +31,19 @@
           <button class="location__button">Search</button>
           <button class="unit">°C</button>
         </section>
-        <section class="todayscard">
-          <!-- <h1 class="city">Toronto <span>,CA</span></h1>
-          <section class="todayscard-firstrow">
-            <img class="todayscard-icon" src="./images/sun.svg" alt="sunny" />
-            <p class="todayscard__weather">Clear</p>
-            <p class="todayscard__temp">24 °C</p>
-          </section>
-          <section class="todayscard-secondrow">
-            <p class="todayscard-secondrow-items">
-              Humidity
-              <span class="todayscard-secondrow-values humidity">26%</span>
-            </p>
-            <p class="todayscard-secondrow-items">
-              Wind Speed
-              <span class="todayscard-secondrow-values wind">4.12 m/s</span>
-            </p>
-          </section>
-          <section>
-            <p>
-              feels like:
-              <span class="today-feelslike todayscard-secondrow-values"></span>
-            </p>
-          </section> -->
-        </section>
+        <section class="todayscard"><span id="loader"></span></section>
       </section>
-      <section class="cards">
-        <!-- <section class="cards__card shadow">
-          <img class="card__icon" src="./images/sun.svg" alt="sunny" />
-          <h2 class="card__day">Wednesday</h2>
-          <p class="card__temprature">24 °C</p>
-          <p class="card__weather">Clear</p>
-        </section> -->
-      </section>
+      <section class="cards"></section>
     </main>
 
+    <div id="modal">
+      <div id="modal-window">
+        <div><span id="modal-button">X</span></div>
+        <div id="modal-text"><p>test</p></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="./config.js" type="module"></script>
     <script src="./app.js" type="module"></script>
   </body>
 </html>

@@ -1,6 +1,8 @@
 import { getData, getCurrentLocation } from "./utils/http-request.js";
 import { Forecast } from "./models/forecast.js";
-const APIKEY = "a819feecf85020feb3988c839fd94725";
+import { showModal, hideModal } from "./utils/modal.js";
+import { ENCRYPTED_APIKEY, passphrase } from "./config.js";
+
 let city = "toronto";
 let unit = "metric";
 
@@ -8,15 +10,12 @@ async function searchHandler(event) {
   const inputCity = document.querySelector(".location__input");
   if (event.target.classList.contains("location__button")) {
     if (inputCity.value === "") {
-      alert("Please enter a city name!");
+      showModal("Please enter a city name!");
       return;
     } else city = inputCity.value;
-  } else if (event.target.classList.contains("location__icon")) {
-    console.log("yes");
-    city = getCurrentLocation();
   }
   inputCity.value === "";
-  const data = await getData(city, APIKEY, unit);
+  const data = await getData(city, ENCRYPTED_APIKEY, unit, passphrase);
   const forecast = new Forecast(data, unit);
   forecast.render();
 }
@@ -37,10 +36,13 @@ async function initiate() {
   const metricButton = document.querySelector(".unit");
   const searchButton = document.querySelector(".location__button");
   const locationIcon = document.querySelector(".location__icon");
+  const loader = document.getElementById("loader");
+  const modalButton = document.getElementById("modal-button");
   metricButton.addEventListener("click", metricHandler);
   searchButton.addEventListener("click", searchHandler);
   locationIcon.addEventListener("click", getCurrentLocation);
-  const data = await getData(city, APIKEY, unit);
+  modalButton.addEventListener("click", hideModal);
+  const data = await getData(city, ENCRYPTED_APIKEY, unit, passphrase);
   const forecast = new Forecast(data, unit);
   forecast.render();
 }

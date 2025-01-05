@@ -1,3 +1,4 @@
+
 class Forecast {
   constructor(data, unit) {
     this.data = data;
@@ -46,7 +47,8 @@ class Forecast {
     const { main: weather, icon } = list[0].weather[0];
     const unitShow = this.unit === "metric" ? "°C" : "°F";
     const todaysCard = document.querySelector(".todayscard");
-
+    const loader = document.getElementById("loader");
+    // loader.style.display = "inline-block";
     todaysCard.innerHTML = this.todayFirstTwoJSX(
       cityName,
       country,
@@ -55,6 +57,7 @@ class Forecast {
       temp,
       unitShow
     ).concat(this.todaySecondTwoJSX(humidity, wind, feelsLike, unitShow));
+    // loader.style.display = "none";
   }
 
   filterOtherDays() {
