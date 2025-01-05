@@ -1,7 +1,7 @@
 ### 1. **Project Description**
 
-> **Weather Forecast Application**  
-> Developed a responsive web application that allows users to search for and view current weather conditions for any city. The app fetches real-time data from a weather API and displays it in a user-friendly interface.
+**Weather Forecast Application**  
+Developed a responsive web application that allows users to search for and view current weather conditions for any city. The app fetches real-time data from a weather API and displays it in a user-friendly interface.
 
 ### 2. **Technologies Used**
 - HTML5, CSS3, JavaScript
