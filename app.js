@@ -1,7 +1,7 @@
 import { getData, getCurrentLocation } from "./utils/http-request.js";
 import { Forecast } from "./models/forecast.js";
 import { showModal, hideModal } from "./utils/modal.js";
-import { ENCRYPTED_APIKEY, passphrase } from "./config.js";
+import { ENCRYPTED_APIKEY, passphrase } from "./utils/config.js";
 
 let city = "toronto";
 let unit = "metric";

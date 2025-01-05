@@ -1,5 +1,5 @@
 import { showModal } from "./modal.js";
-import { ENCRYPTED_APIKEY_GEO, passphrase } from "../config.js";
+import { ENCRYPTED_APIKEY_GEO, passphrase } from "./config.js";
 
 const decryptApiKey = (apiKey, passphrase) => {
   return CryptoJS.AES.decrypt(apiKey, passphrase).toString(CryptoJS.enc.Utf8);
